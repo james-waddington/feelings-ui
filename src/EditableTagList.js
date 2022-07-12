@@ -16,7 +16,7 @@ const EditableTagList = ({ tags, setTags }) => {
     const [newTagName, setNewTagName] = useState('');
 
     const addTag = tagName => {
-        if(!tags.includes(tagName)) {
+        if(tagName.length > 0 && !tags.includes(tagName)) {
             setTags([...tags, tagName]);
         }
         setNewTagName('');

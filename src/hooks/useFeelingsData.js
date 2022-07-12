@@ -8,7 +8,7 @@ const useFeelingsData = (projectName) => {
         const fetchFeelingsData = async () => {
             const feelingsData = await fetch(FEELINGS_API + '/feelings');
             const feelingsJson = await feelingsData.json();
-            setFeelingsData(feelingsJson.Item);
+            setFeelingsData(feelingsJson);
         };
 
         fetchFeelingsData().catch(console.error);

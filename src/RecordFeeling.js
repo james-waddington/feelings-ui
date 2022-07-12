@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { saveFeeling } from "./mock-api";
 import styled from "styled-components";
 import EditableTagList from "./EditableTagList";
 import FeelingButton from "./FeelingButton";
+import FEELINGS_API from "./api";
 
 const FeelingsButtonWrapper = styled.div`
     width: 100%;
@@ -26,6 +26,15 @@ const SaveButton = styled.input`
     width: 100%;
 `;
 
+const saveFeeling = async feeling => {
+    const options = {
+        method: 'PUT',
+        body: JSON.stringify(feeling)
+    };
+    const response = await fetch(FEELINGS_API + '/feelings', options).catch(error => {console.warn(error)});
+    return response?.ok === true;
+};
+
 /* getTime and getLocation can be passed in so they are concerns of the embedding page.
    eg. getTime might be the current data/time, or preiod of time into a video */
 const RecordFeeling = ({projectDetails, getTime, getLocation}) => {
@@ -33,10 +42,14 @@ const RecordFeeling = ({projectDetails, getTime, getLocation}) => {
     const [tags, setTags] = useState([]);
     const handleSubmit = async event => {
         event.preventDefault();
-        await saveFeeling({
+        const response = await saveFeeling({
+            project: projectDetails.title,
             value: selectedValue,
-            tags
+            tags,
+            location: getLocation(),
+            time: getTime()
         });
+        // TODO: Feedback to user
     };
 
     return (

@@ -6,6 +6,7 @@ const Tag = styled.button`
     border-radius: 5px;
     color: #FFFFFF;
     padding: .2rem .5rem;
+    margin: 0 .2rem;
 `;
 
 const TagListWrapper = styled.div`

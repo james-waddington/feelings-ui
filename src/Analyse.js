@@ -1,10 +1,13 @@
 import { useParams } from "react-router-dom";
+import { useProjectDetails } from "./hooks";
+import AnalyseDefault from "./AnalyseDefault";
 
 const Analyse = () => {
     const {project} = useParams();
+    const [projectDetails] = useProjectDetails(project);
 
     return (
-        <h2>Analyse {project}</h2>
+        <AnalyseDefault projectDetails={projectDetails} />
     );
 };
 

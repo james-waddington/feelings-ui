@@ -9,3 +9,5 @@ This is an adhoc, incomplete and unordered list.
 - Fix manifest svg issue
 - Set default feeling value based on project config
 - Improve error handling
+- implement getLocation and getTime
+- Add a CSP
