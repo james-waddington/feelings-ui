@@ -1,4 +1,3 @@
-import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Analyse from './Analyse';
 import Record from './Record'
