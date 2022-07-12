@@ -1,0 +1,47 @@
+[
+    {
+        "value": 2,
+        "time": "PT2M10S",
+        "location": {
+            "latitude": "53.4070373",
+            "longitude": "-2.2865499"
+        },
+        "tags": []
+    },
+    {
+        "value": 2,
+        "time": "PT2M10S",
+        "location": {
+            "latitude": "53.4070373",
+            "longitude": "-2.2865499"
+        },
+        "tags": []
+    },
+    {
+        "value": 2,
+        "time": "PT2M10S",
+        "location": {
+            "latitude": "53.4070373",
+            "longitude": "-2.2865499"
+        },
+        "tags": []
+    },
+    {
+        "value": 2,
+        "time": "PT2M10S",
+        "location": {
+            "latitude": "53.4070373",
+            "longitude": "-2.2865499"
+        },
+        "tags": []
+    },
+    {
+        "value": 2,
+        "time": "PT2M10S",
+        "location": {
+            "latitude": "53.4070373",
+            "longitude": "-2.2865499"
+        },
+        "tags": []
+    }
+]

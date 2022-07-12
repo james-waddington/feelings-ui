@@ -26,7 +26,9 @@ const SaveButton = styled.input`
     width: 100%;
 `;
 
-const RecordFeeling = ({projectDetails}) => {
+/* getTime and getLocation can be passed in so they are concerns of the embedding page.
+   eg. getTime might be the current data/time, or preiod of time into a video */
+const RecordFeeling = ({projectDetails, getTime, getLocation}) => {
     const [selectedValue, setSelectedValue] = useState(0);
     const [tags, setTags] = useState([]);
 
