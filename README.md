@@ -5,6 +5,11 @@ This should be done in a simple way using icons or emojis, to encourage users to
 Users can optionally tag feelings. This allows the user to give context in whatever way feels relevant to them.
 We can then analyse this data to look for trends and insights.
 
+## Summary
+This app is far from complete, but has a basic working front and back end.
+Build using create-react-app for rapid development.
+Hosted on S3 + Cloudfront: https://dev.jmw.org.uk/record/wellbeing
+
 ## Goals
 Quickly create a functioning app which loosley mirrors a larger piece of work.
 Able to discuss different elements from requirements to infrastructure - not just code.
