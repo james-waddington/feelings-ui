@@ -42,7 +42,7 @@ const RecordFeeling = ({projectDetails, getTime, getLocation}) => {
     const [tags, setTags] = useState([]);
     const handleSubmit = async event => {
         event.preventDefault();
-        const response = await saveFeeling({
+        await saveFeeling({
             project: projectDetails.title,
             value: selectedValue,
             tags,
