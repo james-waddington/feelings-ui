@@ -4,12 +4,28 @@ import { saveFeeling } from "./mock-api";
 import styled from "styled-components";
 import useProjectDetails from "./hooks/useProjectDetails";
 import EditableTagList from "./EditableTagList";
-import Icon from "./Icon";
+import FeelingButton from "./FeelingButton";
 
-const FeelingButton = styled.button`
-    background: none;
+const FeelingsButtonWrapper = styled.div`
+    width: 100%;
+`;
+
+const FeelingsForm = styled.form`
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 2px;
+    padding: 1rem;
+    text-align: center;
+    width: 20rem;
+`;
+
+const SaveButton = styled.input`
+    background-color: green;
     border: none;
-    width: 50px;
+    color: #FFFFFF;
+    margin: 1rem 0;
+    padding: .5rem 0;
+    width: 100%;
 `;
 
 const Record = () => {
@@ -27,16 +43,16 @@ const Record = () => {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
-            <h2>{project.title}</h2>
-            {projectDetails && projectDetails.icons.map((icon, index) => (
-                <FeelingButton type="button" key={index} onClick={() => setSelectedValue(index)}>
-                    <Icon name={icon} />
-                </FeelingButton>
-            ))}
+        <FeelingsForm onSubmit={handleSubmit}>
+            <h2>{projectDetails.title}</h2>
+            <FeelingsButtonWrapper>
+                {projectDetails && projectDetails.icons.map((icon, index) => (
+                    <FeelingButton key={index} icon={icon} isSelected={index === selectedValue} clickCallback={() => setSelectedValue(index)} />
+                ))}
+            </FeelingsButtonWrapper>
             <EditableTagList tags={tags} setTags={setTags} />
-            <input type="submit" value="save" />
-        </form>
+            <SaveButton type="submit" value="save" />
+        </FeelingsForm>
     );
 };
 

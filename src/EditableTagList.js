@@ -1,4 +1,16 @@
 import { useState } from "react";
+import styled, { css } from "styled-components";
+import TagList from "./TagList";
+
+const AddTagButton = styled.button`
+    background-color: blue;
+    border: none;
+    border-radius: 5px;
+    color: #FFFFFF;
+    height: 1.5rem;
+    margin-left: .2rem;
+    width: 1.5rem;
+`;
 
 const EditableTagList = ({ tags, setTags }) => {
     const [newTagName, setNewTagName] = useState('');
@@ -19,16 +31,12 @@ const EditableTagList = ({ tags, setTags }) => {
 
     return (
         <>
+            <TagList tags={tags} clickCallback={removeTag} />
             <label>
-                Add tag:
+                Add tag:&nbsp;
                 <input type="text" name="addTag" value={newTagName} onChange={event => setNewTagName(event.target.value)} />
             </label>
-            {
-                tags.map((tagName, index) => (
-                    <button type="button" key={index} onClick={() => {removeTag(tagName)}}>{tagName}</button>
-                ))
-            }
-            <button type="button" onClick={() => addTag(newTagName)}>+</button>
+            <AddTagButton type="button" onClick={() => addTag(newTagName)}>+</AddTagButton>
         </>
     );
 }
