@@ -11,3 +11,5 @@ This is an adhoc, incomplete and unordered list.
 - Improve error handling
 - implement getLocation and getTime
 - Add a CSP
+- put the project details in context?
+- user login

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import styled from "styled-components";
 import EditableTagList from "./EditableTagList";
 import FeelingButton from "./FeelingButton";
@@ -12,6 +12,7 @@ const FeelingsForm = styled.form`
     border-radius: 10px;
     border-style: solid;
     border-width: 2px;
+    margin: auto;
     padding: 1rem;
     text-align: center;
     width: 20rem;
@@ -40,17 +41,24 @@ const saveFeeling = async feeling => {
 const RecordFeeling = ({projectDetails, getTime, getLocation}) => {
     const [selectedValue, setSelectedValue] = useState(0);
     const [tags, setTags] = useState([]);
-    const handleSubmit = async event => {
+    const [userMessage, setUserMessage] = useState('');
+    const handleSubmit = useCallback(async event => {
         event.preventDefault();
-        await saveFeeling({
+        setUserMessage('');
+        const response = await saveFeeling({
             project: projectDetails.title,
             value: selectedValue,
             tags,
             location: getLocation(),
             time: getTime()
         });
-        // TODO: Feedback to user
-    };
+        const message = response ? 'Saved' : 'Error - please try again'
+        if(response) {
+            setTags([]);
+            setSelectedValue(0);
+        }
+        setUserMessage(message);
+    }, [getLocation, getTime, projectDetails.title, selectedValue, tags]);
 
     return (
         <FeelingsForm onSubmit={handleSubmit}>
@@ -62,6 +70,7 @@ const RecordFeeling = ({projectDetails, getTime, getLocation}) => {
             </FeelingsButtonWrapper>
             <EditableTagList tags={tags} setTags={setTags} />
             <SaveButton type="submit" value="save" />
+            <p>{userMessage}</p>
         </FeelingsForm>
     );
 };
