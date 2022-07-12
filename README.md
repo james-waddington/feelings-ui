@@ -32,6 +32,21 @@ This can include a different set of icons.
 Here a tracking user can record feelings by selecting one of 5 icons
 ### Analysis Screen
 Here an analyst user can analyze sets of data. This screen may be different for different project types.
+
+## User Stories
+As a tracker user, I want to see themed icons for my project
+
+As a tracker user, I want to be able to record how I feel by selecting one of 5 icons
+
+As a tracker user, I want to be able to tag my reaction with zero to many tags
+
+As an analyst user, I want to see summary data for a given project
+
+As an analyst user, I want to see a view specific to my project
+
+As an analyst user, I want to filter my results by feeling selected
+
+
 ## Decision Notes
 - create-react-app: For rapid development. Don't spend more time than necessary on project setup.
 - S3 + Cloudfront hosting: A real project should have some sense of how it will run. Deploy to some realistic infrastructure.
