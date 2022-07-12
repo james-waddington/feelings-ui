@@ -2,21 +2,19 @@
     "review": {
         "title": "",
         "icons": [
-            "",
-            "",
-            "",
-            "",
-            ""
+            "Review1",
+            "Review2",
+            "Review3"
         ]
     },
     "wellbeing": {
         "title": "",
         "icons": [
-            "",
-            "",
-            "",
-            "",
-            ""
+            "Wellbeing1",
+            "Wellbeing2",
+            "Wellbeing3",
+            "Wellbeing4",
+            "Wellbeing5"
         ]
     }
 }

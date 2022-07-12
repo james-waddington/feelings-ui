@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { saveFeeling } from "./mock-api";
 import useProjectDetails from "./hooks/useProjectDetails";
 import EditableTagList from "./EditableTagList";
+import Icon from "./Icon";
 
 const Record = () => {
     const {project} = useParams();
@@ -22,7 +23,9 @@ const Record = () => {
         <form onSubmit={handleSubmit}>
             <h2>Record {project}</h2>
             {projectDetails && projectDetails.icons.map((icon, index) => (
-                <button type="button" key={index} onClick={() => setSelectedValue(index)}>{index}</button>
+                <button type="button" key={index} onClick={() => setSelectedValue(index)}>
+                    <Icon name={icon} />
+                </button>
             ))}
             <EditableTagList tags={tags} setTags={setTags} />
             <input type="submit" value="save" />

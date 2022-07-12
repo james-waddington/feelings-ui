@@ -50,3 +50,5 @@ As an analyst user, I want to filter my results by feeling selected
 ## Decision Notes
 - create-react-app: For rapid development. Don't spend more time than necessary on project setup.
 - S3 + Cloudfront hosting: A real project should have some sense of how it will run. Deploy to some realistic infrastructure.
+
+Icons are from https://openmoji.org/
