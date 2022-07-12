@@ -1,6 +1,7 @@
 {
     "review": {
-        "title": "Rate this",
+        "title": "review",
+        "cta": "Rate this",
         "icons": [
             "Review1",
             "Review2",
@@ -8,7 +9,8 @@
         ]
     },
     "wellbeing": {
-        "title": "How do you feel?",
+        "title": "wellbeing",
+        "cta": "How do you feel?",
         "icons": [
             "Wellbeing1",
             "Wellbeing2",
