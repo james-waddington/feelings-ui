@@ -31,7 +31,6 @@ const SaveButton = styled.input`
 const RecordFeeling = ({projectDetails, getTime, getLocation}) => {
     const [selectedValue, setSelectedValue] = useState(0);
     const [tags, setTags] = useState([]);
-
     const handleSubmit = async event => {
         event.preventDefault();
         await saveFeeling({
@@ -42,7 +41,7 @@ const RecordFeeling = ({projectDetails, getTime, getLocation}) => {
 
     return (
         <FeelingsForm onSubmit={handleSubmit}>
-            <h2>{projectDetails.title}</h2>
+            <h2>{projectDetails.cta}</h2>
             <FeelingsButtonWrapper>
                 {projectDetails && projectDetails.icons.map((icon, index) => (
                     <FeelingButton key={index} icon={icon} isSelected={index === selectedValue} clickCallback={() => setSelectedValue(index)} />

@@ -1,15 +1,20 @@
 import { useState, useEffect } from "react";
-import { getFeelings } from "../mock-api";
+import FEELINGS_API from '../api';
 
 const useFeelingsData = (projectName) => {
-    const [projectDetails, setProjectDetails] = useState('');
+    const [feelingsData, setFeelingsData] = useState('');
 
     useEffect(() => {
-        const details = getFeelings(projectName);
-        setProjectDetails(details);
-    }, [projectName]);
+        const fetchFeelingsData = async () => {
+            const feelingsData = await fetch(FEELINGS_API + '/feelings');
+            const feelingsJson = await feelingsData.json();
+            setFeelingsData(feelingsJson.Item);
+        };
 
-    return [projectDetails];
+        fetchFeelingsData().catch(console.error);
+    }, []);
+
+    return [feelingsData];
 };
 
 export default useFeelingsData;

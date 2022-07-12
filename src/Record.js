@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import {useProjectDetails} from "./hooks";
+import { useProjectDetails } from "./hooks";
 import RecordFeeling from "./RecordFeeling";
 
 const Record = () => {
@@ -7,7 +7,7 @@ const Record = () => {
     const [projectDetails] = useProjectDetails(project);
 
     return (
-        <RecordFeeling projectDetails={projectDetails} />
+        projectDetails && <RecordFeeling projectDetails={projectDetails} />
     );
 };
 
